@@ -30,6 +30,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build and Deploy to cloudHub
+      env:
+        ANYPOINT_USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
+        ANYPOINT_PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
       run: mvn clean deploy -DmuleDeploy --file pom.xml -s .maven/settings.xml
 
    
