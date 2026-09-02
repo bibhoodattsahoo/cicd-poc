@@ -30,6 +30,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build and Deploy to cloudHub
-      run: mvn clean deploy -DmuleDeploy --file pom.xml .maven/settings.xml
+      run: mvn clean deploy -DmuleDeploy --file pom.xml -s .maven/settings.xml
 
    
