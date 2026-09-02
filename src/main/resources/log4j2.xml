@@ -1,23 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
-    <Appenders>
-        <!-- CloudHub 2.0 intercepts the standard console appender system automatically -->
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%-5p %d [%t] [processor: %X{processorPath}; event: %X{correlationId}] %c: %m%n"/>
-        </Console>
-    </Appenders>
 
-    <Loggers>
-        <!-- Http Loggers -->
-        <AsyncLogger name="org.mule.service.http" level="WARN"/>
-        <AsyncLogger name="org.mule.extension.http" level="WARN"/>
+  <Loggers>
+    <AsyncLogger name="org.mule.service.http" level="WARN"/>
+    <AsyncLogger name="org.mule.extension.http" level="WARN"/>
 
-        <!-- Mule LoggerMessageProcessor -->
-        <AsyncLogger name="org.mule.runtime.core.internal.processor.LoggerMessageProcessor" level="INFO"/>
+    <AsyncLogger
+        name="org.mule.runtime.core.internal.processor.LoggerMessageProcessor"
+        level="INFO"/>
 
-        <!-- Redirect Root to Console so CloudHub 2.0 log forwarding can ingest it -->
-        <AsyncRoot level="INFO">
-            <AppenderRef ref="Console"/>
-        </AsyncRoot>
-    </Loggers>
+    <AsyncRoot level="INFO"/>
+  </Loggers>
+
 </Configuration>
