@@ -30,7 +30,9 @@ output application/json
                 <raise-error type="APP:INVALID_INPUT" description="Invalid customer id"/>
             </otherwise>
         </choice>
-    </flow>
+		<logger level="INFO" doc:name="Logger" doc:id="9d1d426c-d410-4e77-b28c-eff8fa4f7fd2" message="#[%dw 2.0&#10;output application/json&#10;---&#10;payload]"/>
+    
+</flow>
 
     <error-handler name="global-error-handler">
         <on-error-propagate type="APP:INVALID_INPUT">
