@@ -67,6 +67,9 @@
 						<muleVersion>4.6.1</muleVersion>
 						<server>anypoint-exchange-v3</server>
 						<applicationName>cicd-test</applicationName>
+						<properties>
+    						<env>dev</env>
+  						</properties>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 					</cloudhub2Deployment>
